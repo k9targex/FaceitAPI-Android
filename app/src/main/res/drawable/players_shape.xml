@@ -1,0 +1,5 @@
+<!-- res/drawable/rounded_item.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#B2000000"/> <!-- Цвет фона, как background-color -->
+    <corners android:radius="10dp"/> <!-- Закругленные углы -->
+</shape>

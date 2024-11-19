@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "456231966884",
+    "project_id": "faceitapi-4b261",
+    "storage_bucket": "faceitapi-4b261.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456231966884:android:556b920f5a188c4598ae31",
+        "android_client_info": {
+          "package_name": "com.example.faceitapimobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb9QhGCaT9l57hKYHKlOnoDi7v-vO7DDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,15 +6,17 @@
     android:background="@drawable/firewatch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:clipChildren="false"
+    android:clipToPadding="false">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/playerFound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
@@ -23,16 +25,17 @@
         app:layout_constraintVertical_bias="0.021" />
 
 
-    <SearchView
-        android:id="@+id/searchView"
+    <Button
+        android:id="@+id/searchButton"
         android:layout_width="46dp"
         android:layout_height="45dp"
+        android:layout_marginEnd="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toEndOf="@+id/playerFound"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <View
         android:id="@+id/view2"
@@ -56,8 +59,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.39" />
 
     <View
         android:id="@+id/view14"
@@ -72,88 +75,248 @@
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintVertical_bias="0.145" />
 
-    <View
-        android:id="@+id/view7"
+    <TextView
+        android:id="@+id/nickname"
         android:layout_width="275dp"
         android:layout_height="78dp"
+        android:textSize="22sp"
+        android:gravity="center"
+
         android:background="@drawable/card_background"
+        android:textColor="@android:color/white"
+
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/view14" />
+        app:layout_constraintTop_toBottomOf="@+id/view14"
+        app:layout_constraintVertical_bias="0.523" />
 
-    <View
-        android:id="@+id/view9"
+    <LinearLayout
+        android:id="@+id/stats_3"
         android:layout_width="122dp"
-
-
         android:layout_height="111dp"
         android:background="@drawable/card_background"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="@+id/view4"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.909" >
+        <TextView
+            android:id="@+id/statname3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Игры"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
-    <View
-        android:id="@+id/view13"
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:contentDescription="Иконка статистики"
+
+            android:src="@drawable/matches" />
+
+        <TextView
+            android:id="@+id/stat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/stats_4"
         android:layout_width="122dp"
-
-
         android:layout_height="111dp"
         android:background="@drawable/card_background"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="@+id/view4"
         app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.903" >
 
-    <View
-        android:id="@+id/view12"
+        <TextView
+            android:id="@+id/statname4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Процент"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_width="29dp"
+            android:layout_height="50dp"
+            android:contentDescription="Иконка статистики"
+
+            android:src="@drawable/percentage" />
+
+        <TextView
+            android:id="@+id/stat4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/stats_2"
         android:layout_width="122dp"
-
-
         android:layout_height="111dp"
         android:background="@drawable/card_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="@+id/view4"
         app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.083" >
 
-    <View
-        android:id="@+id/view11"
+        <TextView
+            android:id="@+id/statname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Победы"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:contentDescription="Иконка статистики"
+
+            android:src="@drawable/crown" />
+
+        <TextView
+            android:id="@+id/stat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/stats_1"
         android:layout_width="122dp"
-
-
         android:layout_height="111dp"
+        android:orientation="vertical"
         android:background="@drawable/card_background"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="@+id/view4"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.083">
+        <TextView
+            android:id="@+id/statname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="У/С"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:src="@drawable/angel"
+
+            android:contentDescription="Иконка статистики" />
+
+        <TextView
+            android:id="@+id/stat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center" />
+    </LinearLayout>
 
     <FrameLayout
-        android:layout_width="243dp"
-        android:layout_height="221dp"
-        android:background="@drawable/img"
-    app:layout_constraintBottom_toBottomOf="@+id/view14"
-    app:layout_constraintEnd_toEndOf="@+id/view14"
-    app:layout_constraintStart_toStartOf="@+id/view14"
-    app:layout_constraintTop_toTopOf="@+id/view14">
+        android:id="@+id/frameLayout"
+        android:layout_width="234dp"
+        android:layout_height="210dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="@+id/view14"
+        app:layout_constraintEnd_toEndOf="@+id/view14"
+        app:layout_constraintStart_toStartOf="@+id/view14"
+        app:layout_constraintTop_toTopOf="@+id/view14">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img"
-        android:clipToOutline="true"/> <!-- Обеспечивает обрезку по закруглённым углам -->
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageViewAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img" />
+        <!-- Иконка лайка для анимации -->
+        <ImageView
+            android:id="@+id/likeIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/heart"
+            android:visibility="gone" />
+    </FrameLayout>
 
+
+<Button
+        android:id="@+id/exitBtn"
+        android:layout_width="43dp"
+        android:layout_height="41dp"
+        android:background="@drawable/icon_exit"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextText"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446" />
+
+    <Button
+        android:id="@+id/listOfPlayers"
+        android:layout_width="41dp"
+        android:layout_height="44dp"
+        android:background="@drawable/icon_players"
+        android:backgroundTint="@color/white"
+        android:tint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
 </androidx.constraintlayout.widget.ConstraintLayout>
